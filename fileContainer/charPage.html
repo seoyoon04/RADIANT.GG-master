@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <link rel="stylesheet" href="charPage.css">
+    <script src="index.js"></script>
+    <script src="../JQuery보관폴더/jquery-3.6.0.js"></script>
+    <script>
+    const data = fetch('https://valorant-api.com/v1/agents').then(res=>res.json()).then(res=>{
+        let name = "";
+        name = JSON.parse(data).displayName;
+    });
+    $(document).ready(function(){
+        $('.char-box').css({
+            width: 110,
+            height: 110,
+        }).hover(function(){
+            $(this).animate({
+                width: 130,
+                height: 130
+            })
+        },function(){
+            $(this).animate({
+                width: 110,
+                height: 110
+            })
+        });
+    });
+    </script>
+</head>
+<body>
+    <div id="proj-title">RADIANT.GG</div>
+    <link rel="stylesheet" href="charPage.css">
+    <div class="navbar-wrap">
+        <hr id="nav-top">
+        <div id="nav-content">
+            <button class="navoption selected" id="match-history" onclick = "location.href = 'main.html'">전적검색</button>
+            <button class="navoption" id="char-info" onclick = "location.href = 'charPage.html'">캐릭터 정보</button>
+            <button class="navoption" id="gun-info" onclick = "location.href = 'gunInfo.html'">총기 정보</button>
+            <button class="navoption" id="map-info" onclick = "location.href = 'mapInfo.html'">맵 정보</button>
+            <button class="navoption" id="skin-info" onclick = "location.href = 'skinInfo.html'">스킨 정보</button>   
+            <!-- onclick="location.href = '이동할 페이지'"" -->
+        </div>
+        <hr id="nav-bot">
+
+            <div id="box-top">
+                <button class="char-box" data-index="6" id="left-top" onclick = "location.href = 'charPage/Sage.html'">세이지</button>
+                <button class="char-box" data-index="1" onclick = "location.href = 'charPage/Phinix.html'">피닉스</button>
+                <button class="char-box" data-index="2" onclick = "location.href = 'charPage/Jett.html'">제트</button>
+                <button class="char-box" data-index="3" onclick = "location.href = 'charPage/Reyna.html'">레이나</button>
+                <button class="char-box" data-index="9" onclick = "location.href = 'charPage/Chamber.html'">체임버</button>
+                <button class="char-box" data-index="7" onclick = "location.href = 'charPage/Cyper.html'">사이퍼</button>
+                <button class="char-box" data-index="8" onclick = "location.href = 'charPage/Killjoy.html'">킬조이</button>
+                <button class="char-box" data-index="4" onclick = "location.href = 'charPage/Yoru.html'">요루</button>
+                <button class="char-box" data-index="10" onclick = "location.href = 'charPage/Kyo.html'">케이오</button>
+                <button class="char-box" data-index="16" onclick = "location.href = 'charPage/Brimstone.html'">브림스톤</button>
+            </div>
+            <div id="box-bot">
+                <button class="char-box" data-index="17" id="left-bot" onclick = "location.href = 'charPage/Omen.html'">오멘</button>
+                <button class="char-box" data-index="11" onclick = "location.href = 'charPage/Soba.html'">소바</button>
+                <button class="char-box" data-index="12" onclick = "location.href = 'charPage/Skye.html'">스카이</button>
+                <button class="char-box" data-index="5" onclick = "location.href = 'charPage/Raze.html'">레이즈</button>
+                <button class="char-box" data-index="15" onclick = "location.href = 'charPage/Astra.html'">아스트라</button>
+                <button class="char-box" data-index="13" onclick = "location.href = 'charPage/Britch.html'">브리치</button>
+                <button class="char-box" data-index="14" onclick = "location.href = 'charPage/Bypher.html'">바이퍼</button>
+            </div>
+    </div>
+</body>
+</html>
